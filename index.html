@@ -23,15 +23,13 @@
   .btn-outline{background:#fff}
   header{position:relative;color:#fff;background:var(--bg)}
   .topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-  /* runde Maske für nicht-quadratische Logos */
   .logo-mask{width:58px;height:58px;border-radius:50%;background:#111;border:2px solid #fff;display:grid;place-items:center;overflow:hidden}
-  .logo-mask img{width:100%;height:100%;object-fit:cover}  /* <-- fill the circle */
+  .logo-mask img{width:100%;height:100%;object-fit:cover}
   .brand{display:flex;gap:12px;align-items:center}
   .brand h1{font-size:18px;margin:0;line-height:1.15;font-weight:800;letter-spacing:.3px;color:#fff}
   .lang{display:flex;gap:8px;flex-wrap:wrap}
   .lang button{padding:8px 12px;border-radius:12px;border:1px solid #fff;background:transparent;color:#fff;cursor:pointer}
   .lang button.active{background:#fff;color:#111827}
-  /* HERO mit Hintergrundbild und stärkerem Overlay */
   .hero{position:relative;overflow:hidden}
   .hero::before{
     content:"";position:absolute;inset:0;
@@ -43,18 +41,9 @@
   .hero h2{font-size:40px;line-height:1.1;margin:0 0 12px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.7)}
   .hero p{color:#f3f6ff;margin:0 0 18px;text-shadow:0 2px 8px rgba(0,0,0,.6)}
   .badges{display:flex;gap:10px;flex-wrap:wrap}
-  /* hero KPI box: dark translucent to avoid white-on-white */
-  .kpi.hero-card{
-    background:rgba(0,0,0,.55);
-    color:#fff;
-    border-left:6px solid var(--accent);
-    padding:16px;border-radius:16px;
-    box-shadow:0 10px 24px rgba(0,0,0,.25);
-    backdrop-filter: blur(2px);
-  }
+  .kpi.hero-card{background:rgba(0,0,0,.55);color:#fff;border-left:6px solid var(--accent);padding:16px;border-radius:16px;box-shadow:0 10px 24px rgba(0,0,0,.25);backdrop-filter: blur(2px)}
   .kpi.hero-card strong{color:#fff}
   .kpi.hero-card ul{margin:10px 0 0 18px}
-  /* generic KPI (light) for other sections */
   .kpi{background:#ffffff;border-left:6px solid var(--accent);padding:16px;border-radius:14px;box-shadow:0 8px 20px rgba(10,20,40,.08)}
   .kpi ul{margin:10px 0 0 18px}
   section{padding:60px 0}
@@ -91,7 +80,6 @@
 <header>
   <div class="container topbar">
     <div class="brand">
-      <!-- Logo-Datei als logo.jpg -->
       <span class="logo-mask"><img alt="PUSULA logo" src="logo.jpg" /></span>
       <h1>PUSULA<br><span style="font-weight:600">Seyahat & Vize Hizmetleri</span></h1>
     </div>
@@ -113,7 +101,6 @@
           <a class="btn btn-outline" href="#services" data-i="hero.ctaSecondary">Hizmetlerimiz</a>
         </div>
       </div>
-      <!-- dark hero KPI card to avoid white-on-white -->
       <div class="kpi hero-card">
         <strong data-i="kpi.head">Schengen Öne Çıkanlar</strong>
         <ul class="list">
@@ -128,11 +115,231 @@
   </div>
 </header>
 
-<!-- Rest remains identical to v1.3 (services, CTA, contact, footer, language JS) -->
+<main>
+  <section id="services" class="container">
+    <div class="sec-head">
+      <h3 data-i="svc.title">Hizmet Alanlarımız</h3>
+      <span style="color:var(--accent);font-weight:800">★</span>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h4 data-i="svc.card1.h">Schengen Vizesi</h4>
+        <ul class="list">
+          <li data-i="svc.card1.li1">90 günlük multi (çok giriş-çıkışlı) seçenekler</li>
+          <li data-i="svc.card1.li2">Aileler için uygun, garanti süreç</li>
+          <li data-i="svc.card1.li3">Türkiye’de ikamet izni olan yabancılar için de uygun</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 data-i="svc.card2.h">Türkiye Çalışma / İkamet</h4>
+        <ul class="list">
+          <li data-i="svc.card2.li1">Çalışma izni, ikamet ve oturma izni</li>
+          <li data-i="svc.card2.li2">Randevu ve dosya işlemleri</li>
+          <li data-i="svc.card2.li3">Sigorta işlemleri</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 data-i="svc.card3.h">Vatandaşlık & Vize</h4>
+        <ul class="list">
+          <li data-i="svc.card3.li1">Vatandaşlık işlemleri</li>
+          <li data-i="svc.card3.li2">Türkiye vizesi</li>
+          <li data-i="svc.card3.li3">Profesyonel, hızlı, güvenli danışmanlık</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="kpi" style="border-left-color:#4f7bd9">
+      <strong data-i="all.title">TÜM DÜNYA ÜLKELERİNE:</strong>
+      <ul class="list">
+        <li data-i="all.li1">Turistik vize</li>
+        <li data-i="all.li2">Çalışma vizesi</li>
+        <li data-i="all.li3">Schengen vizesi</li>
+        <li data-i="all.li4">Oturum kartı</li>
+        <li data-i="all.li5">İkamet izni</li>
+        <li data-i="all.li6">Vize randevusu</li>
+        <li data-i="all.li7">Meslek belgeleri, sertifikalar, dil sertifikaları</li>
+        <li data-i="all.li8">Sağlık seyahat sigortası</li>
+        <li data-i="all.li9">Dosya ve konsolosluk hizmetleri</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="kpi">
+        <strong data-i="cta.title">Ailenizle güvenle yolculuk edin.</strong>
+        <p style="margin:8px 0 0" data-i="cta.p">İşinizi ve evrakınızı biz hazırlayalım — siz yalnızca seyahatinizin tadını çıkarın.</p>
+        <div style="margin-top:12px">
+          <a class="btn btn-primary" href="#contact" data-i="cta.btn">Ücretsiz ön görüşme</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="container">
+    <div class="sec-head">
+      <h3 data-i="contact.title">İletişim & Hızlı Başvuru</h3>
+    </div>
+    <div class="contact">
+      <form id="leadForm">
+        <div class="inline">
+          <div>
+            <label data-i="form.nameL">Adınız Soyadınız</label>
+            <input name="name" placeholder="Ad Soyad" required />
+          </div>
+          <div>
+            <label data-i="form.phoneL">Telefon</label>
+            <input name="phone" placeholder="+90 ..." />
+          </div>
+        </div>
+
+        <label data-i="form.serviceL">Hizmet</label>
+        <select name="service">
+          <option value="schengen" data-i="form.opt1">Schengen Vizesi</option>
+          <option value="work" data-i="form.opt2">Çalışma / İkamet İzni</option>
+          <option value="citizenship" data-i="form.opt3">Vatandaşlık İşlemleri</option>
+          <option value="turkishvisa" data-i="form.opt4">Türkiye Vizesi</option>
+          <option value="other" data-i="form.opt5">Diğer</option>
+        </select>
+
+        <label data-i="form.msgL">Mesajınız</label>
+        <textarea name="message" placeholder="Kısaca ihtiyacınızı yazın..." required></textarea>
+
+        <div class="inline">
+          <div>
+            <label data-i="form.langL">Tercih ettiğiniz dil</label>
+            <select name="prefLang">
+              <option value="tr">Türkçe</option>
+              <option value="en">English</option>
+              <option value="de">Deutsch</option>
+              <option value="ar">العربية</option>
+            </select>
+          </div>
+          <div style="display:flex;align-items:end;gap:10px">
+            <button class="btn btn-primary" type="submit" data-i="form.submit">WhatsApp ile Gönder</button>
+          </div>
+        </div>
+        <p style="font-size:12px;color:#6c7a99;margin-top:8px" data-i="form.note">
+          Gönder’e bastığınızda WhatsApp açılır ve mesajınız otomatik doldurulur. Sadece onaylayın.
+        </p>
+      </form>
+
+      <div class="contact-box">
+        <h4 style="margin-top:0" data-i="contact.boxTitle">Doğrudan iletişim</h4>
+        <a href="tel:+447391942389">+44 7391 942389</a>
+        <a target="_blank" rel="noopener" id="waBtn" class="btn btn-outline">WhatsApp</a>
+        <p style="margin-top:10px" data-i="contact.boxP">7/24 yazın — en kısa sürede dönüş yapalım.</p>
+        <ul class="list" style="margin-top:12px">
+          <li data-i="contact.li1">Hızlı değerlendirme & uygunluk kontrolü</li>
+          <li data-i="contact.li2">Gerekli evrak listesi</li>
+          <li data-i="contact.li3">Randevu & dosya hazırlığı</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> PUSULA — <span data-i="foot.tag">Seyahat & Vize Hizmetleri</span></div>
+      <div><a href="#" data-i="foot.disc">Bilgilendirme: Bu web sitesi danışmanlık amaçlıdır.</a></div>
+    </div>
+  </div>
+</footer>
+
 <script>
-/* Keep the same L dictionaries and JS from v1.3 – omitted here for brevity in the Word memo.
-   When you paste into your project, reuse the L dictionaries and the WhatsApp handler from v1.3.
-*/
+  const L = {
+    tr:{ "hero.title":"Avrupa’ya mı gitmek istiyorsun?",
+      "hero.subtitle":"Schengen vizesi ve Türkiye çalışma/ikamet/vatandaşlık işlemlerinde hızlı, güvenli ve garantili danışmanlık.",
+      "hero.ctaPrimary":"Hemen danışın","hero.ctaSecondary":"Hizmetlerimiz",
+      "kpi.head":"Schengen Öne Çıkanlar","kpi.li1":"İşlem süresi: ~2 hafta","kpi.li2":"Vize süresi: 5–15 gün","kpi.li3":"Aileler ve çocuklu aileler için uygun","kpi.li4":"Oturum kartı olanlar için uygun","kpi.li5":"Ön ödeme / peşinat yoktur",
+      "svc.title":"Hizmet Alanlarımız","svc.card1.h":"Schengen Vizesi","svc.card1.li1":"90 günlük multi (çok giriş-çıkışlı) seçenekler","svc.card1.li2":"Aileler için uygun, garanti süreç","svc.card1.li3":"Türkiye’de ikamet izni olan yabancılar için de uygun",
+      "svc.card2.h":"Türkiye Çalışma / İkamet","svc.card2.li1":"Çalışma izni, ikamet ve oturma izni","svc.card2.li2":"Randevu ve dosya işlemleri","svc.card2.li3":"Sigorta işlemleri",
+      "svc.card3.h":"Vatandaşlık & Vize","svc.card3.li1":"Vatandaşlık işlemleri","svc.card3.li2":"Türkiye vizesi","svc.card3.li3":"Profesyonel, hızlı, güvenli danışmanlık",
+      "all.title":"TÜM DÜNYA ÜLKELERİNE:","all.li1":"Turistik vize","all.li2":"Çalışma vizesi","all.li3":"Schengen vizesi","all.li4":"Oturum kartı","all.li5":"İkamet izni","all.li6":"Vize randevusu","all.li7":"Meslek belgeleri, sertifikalar, dil sertifikaları","all.li8":"Sağlık seyahat sigortası","all.li9":"Dosya ve konsolosluk hizmetleri",
+      "cta.title":"Ailenizle güvenle yolculuk edin.","cta.p":"İşinizi ve evrakınızı biz hazırlayalım — siz yalnızca seyahatinizin tadını çıkarın.","cta.btn":"Ücretsiz ön görüşme",
+      "contact.title":"İletişim & Hızlı Başvuru","contact.boxTitle":"Doğrudan iletişim","contact.boxP":"7/24 yazın — en kısa sürede dönüş yapalım.","contact.li1":"Hızlı değerlendirme & uygunluk kontrolü","contact.li2":"Gerekli evrak listesi","contact.li3":"Randevu & dosya hazırlığı",
+      "form.nameL":"Adınız Soyadınız","form.phoneL":"Telefon","form.serviceL":"Hizmet","form.opt1":"Schengen Vizesi","form.opt2":"Çalışma / İkamet İzni","form.opt3":"Vatandaşlık İşlemleri","form.opt4":"Türkiye Vizesi","form.opt5":"Diğer","form.msgL":"Mesajınız","form.langL":"Tercih ettiğiniz dil","form.submit":"WhatsApp ile Gönder","form.note":"Gönder’e bastığınızda WhatsApp açılır ve mesajınız otomatik doldurulur. Sadece onaylayın.",
+      "foot.tag":"Seyahat & Vize Hizmetleri","foot.disc":"Bilgilendirme: Bu web sitesi danışmanlık amaçlıdır."
+    },
+    en:{ "hero.title":"Do you want to go to Europe?",
+      "hero.subtitle":"Fast, secure and guaranteed consultancy for Schengen visas and Turkish work/residence/citizenship procedures.",
+      "hero.ctaPrimary":"Get consultation","hero.ctaSecondary":"Our services",
+      "kpi.head":"Schengen Highlights","kpi.li1":"Processing time: ~2 weeks","kpi.li2":"Visa duration: 5–15 days","kpi.li3":"Suitable for families and families with children","kpi.li4":"Eligible for residence-card holders","kpi.li5":"No advance payment required",
+      "svc.title":"Service Areas","svc.card1.h":"Schengen Visa","svc.card1.li1":"Up to 90-day multi-entry options","svc.card1.li2":"Family-friendly, guaranteed process","svc.card1.li3":"Also suitable for foreigners holding a Turkish residence permit",
+      "svc.card2.h":"Turkey Work / Residence","svc.card2.li1":"Work, residence & stay permits","svc.card2.li2":"Appointments & file processing","svc.card2.li3":"Insurance procedures",
+      "svc.card3.h":"Citizenship & Turkish Visa","svc.card3.li1":"Citizenship procedures","svc.card3.li2":"Turkish visa","svc.card3.li3":"Professional, fast, secure consultancy",
+      "all.title":"FOR ALL COUNTRIES WORLDWIDE:","all.li1":"Tourist visa","all.li2":"Work visa","all.li3":"Schengen visa","all.li4":"Residence card","all.li5":"Residence permit","all.li6":"Visa appointment","all.li7":"Professional & language certificates","all.li8":"Travel health insurance","all.li9":"File & consulate services",
+      "cta.title":"Travel with confidence.","cta.p":"We prepare your documents and appointments — you enjoy the journey.","cta.btn":"Free initial call",
+      "contact.title":"Contact & Quick Application","contact.boxTitle":"Contact directly","contact.boxP":"Text us 24/7 — we will respond as soon as possible.","contact.li1":"Quick assessment & eligibility check","contact.li2":"Required documents list","contact.li3":"Appointment & file preparation",
+      "form.nameL":"Full name","form.phoneL":"Phone","form.serviceL":"Service","form.opt1":"Schengen Visa","form.opt2":"Work / Residence Permit","form.opt3":"Citizenship Procedures","form.opt4":"Turkish Visa","form.opt5":"Other","form.msgL":"Your message","form.langL":"Preferred language","form.submit":"Send via WhatsApp","form.note":"On submit, WhatsApp opens with your message pre-filled. Just send.",
+      "foot.tag":"Travel & Visa Services","foot.disc":"Disclaimer: This site provides consultancy information."
+    },
+    de:{
+      "hero.title":"Du willst nach Europa?",
+      "hero.subtitle":"Schnelle, sichere und garantierte Beratung für Schengen-Visa und türkische Arbeits-/Aufenthalts-/Einbürgerungsverfahren.",
+      "hero.ctaPrimary":"Jetzt beraten lassen","hero.ctaSecondary":"Leistungen",
+      "kpi.head":"Schengen-Highlights","kpi.li1":"Bearbeitungszeit: ca. 2 Wochen","kpi.li2":"Visagültigkeit: 5–15 Tage","kpi.li3":"Geeignet für Familien (auch mit Kindern)","kpi.li4":"Geeignet für Inhaber einer türkischen Aufenthaltkarte","kpi.li5":"Keine Vorauszahlung",
+      "svc.title":"Unsere Leistungen","svc.card1.h":"Schengen-Visum","svc.card1.li1":"Bis zu 90 Tage, Multi-Entry","svc.card1.li2":"Familienfreundlich, zuverlässiger Prozess","svc.card1.li3":"Auch für Ausländer mit türkischer Aufenthaltserlaubnis",
+      "svc.card2.h":"Türkei Arbeit / Aufenthalt","svc.card2.li1":"Arbeits-, Aufenthalts- und Wohnsitzgenehmigungen","svc.card2.li2":"Termine & Aktenbearbeitung","svc.card2.li3":"Versicherungsangelegenheiten",
+      "svc.card3.h":"Staatsbürgerschaft & Türkei-Visum","svc.card3.li1":"Einbürgerungsverfahren","svc.card3.li2":"Türkei-Visum","svc.card3.li3":"Professionell, schnell, sicher",
+      "all.title":"FÜR ALLE LÄNDER WELTWEIT:","all.li1":"Touristenvisum","all.li2":"Arbeitsvisum","all.li3":"Schengen-Visum","all.li4":"Aufenthaltskarte","all.li5":"Aufenthaltserlaubnis","all.li6":"Visum-Termin","all.li7":"Berufs- & Sprachzertifikate","all.li8":"Reisekrankenversicherung","all.li9":"Akte- & Konsulatsservice",
+      "cta.title":"Reisen Sie mit Sicherheit.","cta.p":"Wir kümmern uns um Unterlagen und Termine — Sie genießen die Reise.","cta.btn":"Kostenloses Erstgespräch",
+      "contact.title":"Kontakt & Schnell-Anfrage","contact.boxTitle":"Direkter Kontakt","contact.boxP":"Schreibe uns 24/7 — wir melden uns schnell.","contact.li1":"Schnelle Einschätzung & Eignungscheck","contact.li2":"Liste der benötigten Unterlagen","contact.li3":"Termin & Aktenvorbereitung",
+      "form.nameL":"Vollständiger Name","form.phoneL":"Telefon","form.serviceL":"Leistung","form.opt1":"Schengen-Visum","form.opt2":"Arbeits-/Aufenthaltstitel","form.opt3":"Einbürgerung","form.opt4":"Türkei-Visum","form.opt5":"Sonstiges","form.msgL":"Nachricht","form.langL":"Bevorzugte Sprache","form.submit":"Per WhatsApp senden","form.note":"Beim Senden öffnet sich WhatsApp mit vorgefüllter Nachricht.",
+      "foot.tag":"Reise- & Visa-Dienstleistungen","foot.disc":"Hinweis: Diese Website dient der Beratung."
+    },
+    ar:{
+      "hero.title":"هل ترغب بالذهاب إلى أوروبا؟",
+      "hero.subtitle":"استشارات سريعة وآمنة ومضمونة للحصول على تأشيرة شنغن وإجراءات العمل/الإقامة/الجنسية في تركيا.",
+      "hero.ctaPrimary":"استشارة الآن","hero.ctaSecondary":"خدماتنا",
+      "kpi.head":"أبرز نقاط شنغن","kpi.li1":"مدة المعالجة: حوالي أسبوعين","kpi.li2":"مدة التأشيرة: 5–15 يومًا","kpi.li3":"مناسب للعائلات وللعائلات مع أطفال","kpi.li4":"مناسب لحاملي بطاقة الإقامة","kpi.li5":"لا حاجة لدفع مقدم",
+      "svc.title":"مجالات الخدمة","svc.card1.h":"تأشيرة شنغن","svc.card1.li1":"خيارات دخول متعدد حتى 90 يومًا","svc.card1.li2":"مناسب للعائلات وإجراءات مضمونة","svc.card1.li3":"مناسب أيضًا للأجانب الحاصلين على إذن إقامة في تركيا",
+      "svc.card2.h":"إذن العمل / الإقامة في تركيا","svc.card2.li1":"تصاريح العمل والإقامة والسكن","svc.card2.li2":"حجز المواعيد ومعالجة الملفات","svc.card2.li3":"إجراءات التأمين",
+      "svc.card3.h":"الجنسية والتأشيرة التركية","svc.card3.li1":"إجراءات الحصول على الجنسية","svc.card3.li2":"تأشيرة تركيا","svc.card3.li3":"استشارات مهنية وسريعة وآمنة",
+      "all.title":"لجميع دول العالم:","all.li1":"تأشيرة سياحية","all.li2":"تأشيرة عمل","all.li3":"تأشيرة شنغن","all.li4":"بطاقة إقامة","all.li5":"تصريح إقامة","all.li6":"حجز موعد التأشيرة","all.li7":"شهادات مهنية ولغوية","all.li8":"تأمين صحي للسفر","all.li9":"خدمات الملفات والقنصلية",
+      "cta.title":"سافر بثقة.","cta.p":"ندير مستنداتك ومواعيدك — واستمتع أنت برحلتك.","cta.btn":"مكالمة أولية مجانية",
+      "contact.title":"التواصل والتقديم السريع","contact.boxTitle":"تواصل مباشر","contact.boxP":"راسلنا على مدار الساعة — سنرد بأقرب وقت.","contact.li1":"تقييم سريع وفحص الأهلية","contact.li2":"قائمة المستندات المطلوبة","contact.li3":"حجز المواعيد وتحضير الملفات",
+      "form.nameL":"الاسم الكامل","form.phoneL":"الهاتف","form.serviceL":"الخدمة","form.opt1":"تأشيرة شنغن","form.opt2":"إذن عمل / إقامة","form.opt3":"إجراءات الجنسية","form.opt4":"تأشيرة تركيا","form.opt5":"أخرى","form.msgL":"رسالتك","form.langL":"اللغة المفضلة","form.submit":"إرسال عبر واتساب","form.note":"عند الإرسال، سيفتح واتساب مع رسالة جاهزة — فقط أرسل.",
+      "foot.tag":"خدمات السفر والتأشيرات","foot.disc":"تنبيه: هذا الموقع لأغراض الاستشارة."
+    }
+  };
+  const buttons = document.querySelectorAll('.lang button');
+  const setLang = (code)=>{
+    buttons.forEach(b=>b.classList.toggle('active', b.dataset.lang===code));
+    const dict = L[code] || L.tr;
+    document.querySelectorAll('[data-i]').forEach(el=>{
+      const key = el.getAttribute('data-i');
+      if(dict[key]) el.textContent = dict[key];
+    });
+    document.body.classList.toggle('rtl', code==='ar');
+    document.documentElement.lang = code;
+  };
+  buttons.forEach(b=> b.addEventListener('click', ()=> setLang(b.dataset.lang)));
+  setLang('tr');
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  const WA_NUMBER = '447391942389';
+  const form = document.getElementById('leadForm');
+  const waBtn = document.getElementById('waBtn');
+  waBtn.href = 'https://wa.me/'+WA_NUMBER;
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const fd = new FormData(form);
+    const msg =
+`Yeni başvuru:
+Ad: ${fd.get('name')}
+Telefon: ${fd.get('phone')}
+Hizmet: ${fd.get('service')}
+Dil: ${fd.get('prefLang')}
+Mesaj: ${fd.get('message')}`;
+    const url = 'https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg);
+    window.open(url, '_blank');
+  });
 </script>
 </body>
 </html>
